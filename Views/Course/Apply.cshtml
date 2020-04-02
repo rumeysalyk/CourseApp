@@ -1,0 +1,73 @@
+
+@model Student
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Apply</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel = "stylesheet" href = "/modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel = "stylesheet" href ="~/css/style.css">
+
+</head>
+<body>
+  <div class="container m-4">
+        <div class = "card mx-auto" style="width:500px">
+            <div class = "card-header">
+                Başvuru Formu
+            </div>
+                <form asp-action="apply" method="POST">
+
+                        <div asp-validation-summary="All"></div>
+
+
+                        <div class = "form-group">
+                            <label asp-for ="Name">Adınız</label>
+                            <input asp-for="Name" class ="form-controller">
+                        </div>
+                        
+                        <div class = "form-group">
+                            <label asp-for ="Email">Eposta</label>
+                            <input asp-for ="Email" class ="form-controller">
+                        </div>
+                        
+                        <div class = "form-group">
+                            <label asp-for ="Phone">Telefon</label>
+                            <input asp-for = "Phone" class ="form-controller">
+                        </div>
+                        
+                        <div class = "form-group">
+                            <label asp-for ="Confirm">Kursa katılmak istiyorum</label>
+                            <select asp-for ="Confirm" class ="form-controller" >
+                                <option value = null>Seçiniz</option>
+                                <option value ="true">Evet</option>
+                                <option value ="false">Hayır</option>
+                            </select>
+                        </div>
+                        <input type ="submit" value="Submit" class = "btn-primary btn-block">
+                        @*Kullanıcı butona tıkladığı anda buton içerisindeki form adresine bakacak
+                        ve adreste hangi URL varsa URLye form içerisindeki bütün bilgiler gönderilecek.
+                        Bu adresimiz course controlleri içerisindeki apply metodu olacak
+                        
+                        *@
+                    </form>
+
+
+
+
+            <div class ="card-body">
+                
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+   
+</body>
+</html>

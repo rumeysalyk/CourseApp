@@ -1,0 +1,44 @@
+@model Student
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Thanks</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel = "stylesheet" href = "/modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel = "stylesheet" href ="~/css/style.css">
+</head>
+<body>
+    <div class="container m-4">
+            <div class = "card mx-auto" style="width:500px">
+                <div class = "card-header">
+                    Merhaba, @Model.Name 
+                </div>
+
+                <div class ="card-body">
+                    @if(Model.Confirm == true){
+                        <span>
+                                Kurs talebiniz alınmıştır
+                            <div>
+                                Diğer katılımcıları  <a asp-action="List"> görüntüle</a>
+                            </div>
+                            
+                        </span>
+                    }else{
+                        <span>
+                            Upps.Umarım fikriniz değişir. 
+                        </span>
+                            
+                    }
+                </div>
+
+            </div>
+
+    </div>
+
+    
+
+</body>
+</html>
